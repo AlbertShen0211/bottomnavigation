@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    //  alias(libs.plugins.kotlin.kapt)
+   // alias(libs.plugins.kotlin.ksp)
+    //id 'kotlin-parcelize'
+//    id 'com.google.devtools.ksp' version '1.9.0-1.0.13'
+}
+
+android {
+    namespace "com.ashokvarma.bottomnavigation"
+    lintOptions {
+        abortOnError false
+    }
+
+    compileSdkVersion Integer.parseInt(ANDROID_COMPILE_SDK_VERSION)
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(ANDROID_MIN_SDK_VERSION)
+        versionCode Integer.parseInt(APP_VERSION_CODE)
+        versionName project.APP_VERSION_NAME
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+}
+
